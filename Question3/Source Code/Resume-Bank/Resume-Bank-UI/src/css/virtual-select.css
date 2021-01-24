@@ -1,0 +1,54 @@
+.VirtualSelectGrid {
+  z-index: 1;
+}
+
+.VirtualizedSelectOption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .5rem;
+  cursor: pointer;
+}
+.VirtualizedSelectFocusedOption {
+  background-color: rgba(0,0,0,0.05);
+}
+.VirtualizedSelectDisabledOption {
+  opacity: 0.5;
+}
+.VirtualizedSelectSelectedOption {
+  font-weight: bold;
+}
+
+.Select--multi .Select-value {
+    background-color: #ebf5ff;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 2px;
+    border: 1px solid #c2e0ff;
+    border: 1px solid rgba(39, 44, 50, 0.2);
+    color: #404038;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+.Select--multi .Select-value-icon{
+  border-right: 1px solid rgba(39, 44, 50, 0.2);
+}
+
+.Select-input input{
+ border: none !important;
+}
+
+.Select--multi .Select-input{
+  margin-left: 0px !important;
+}
+
+.Select--multi .Select-value-icon:hover, .Select--multi .Select-value-icon:focus{
+  background-color: rgba(0,0,0,0.05);
+  color: #404038;
+}

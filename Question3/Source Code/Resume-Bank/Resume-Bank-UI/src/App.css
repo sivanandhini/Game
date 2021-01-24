@@ -1,0 +1,270 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+ 
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  .text-left {
+    text-align: left !important; }
+  
+  .text-right {
+    text-align: right !important; }
+  
+  .text-center {
+    text-align: center !important; }
+
+.robodx-pricing-grid {
+      width: 500px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+#price-details tr:nth-child(even){background-color:#f5f8f9;}
+
+#price-details tr:hover {background-color: #ddd;}
+
+.ag-root-wrapper {
+  border: 1px solid #989898;
+}
+ 
+.ui.segment { box-shadow: none !important;}
+.card.border .card-title {     font-size: 1rem !important;}
+.Select.form-control {
+  padding: 0px !important;
+}
+.Select-control {
+  border-radius: 0px;
+  border: none;
+  height: 25px !important;
+  position: relative;
+  top: 0px !important;
+  background: none;
+}
+
+
+div#root {
+  height: 91%;
+  overflow: auto;
+  position: fixed;
+  width: 100%;
+    top: 41px;
+}
+
+.loginMain {
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  background: #56baed;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+}
+
+.fixed-header {  top: 40px !important;}
+
+  
+.ellipse-dropdown { min-width: 25px !important;}
+i.icon {
+  margin-right: 0px !important;
+}
+.header-section {
+  top: 0px;
+  background: #15141494 !important;
+  width: 100%;
+  z-index: 9999;
+}
+.ui.menu {
+  background: #15141494;
+  border-radius: 0px;
+  border-bottom: none;
+}
+.ui.dropdown>.text {
+  display: inline-block;
+  transition: none;
+  color: #fff;
+}
+.ui.menu .item {
+  color: #fff;
+      border-bottom: none;
+}
+.logotxt {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Arial Black", sans-serif;
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 5px;
+}
+.logo-bg {
+  padding-right: 0px;
+  background: rgb(27 25 25 / 14%);
+}
+.logotxt:hover {
+  color: #fff;
+  text-decoration: none;
+}
+a.logoutText {
+  color: #fff;
+  text-transform: uppercase
+}
+.log-out {
+  background: rgb(27 25 25 / 14%);
+  padding: 10px;
+ 
+}
+.log-out a {
+  font-weight: bold;
+  font-size: 12px;
+}
+.card.border .bg-primary {
+  background: linear-gradient(#dddddd, #b3b3b3) !important;
+}
+body .card.border .card-header.bg-primary .card-title { color: #1a344e !important}
+
+body .card.border .card-subtitle {  color: #1a344e !important; font-size: 0.925rem !important;}
+
+.MuiFormControl-root.form-control {
+  height: 24px;
+  font-size: 13px !important;
+  font-family: arial;
+  border: 1px solid #989898;
+  position: relative;
+  top: 2px;
+}
+.form-control .MuiInput-input {
+  padding: 5px 9px;
+  height: 13px;
+}
+.MuiInputBase-formControl {
+  font-size: 13px;
+  font-family: arial;
+}
+.excelIcon {
+  height: 25px;
+  font-size: 9px;
+  position: relative;
+  top: 3px;
+}
+.ReactTable {    border: 1px solid #989898;}
+.ReactTable .rt-thead .rt-th {background: #e6e6e6!important;  border-bottom: 1px solid #989898 !important;  border-left: 1px solid #989898!important;}
+body .ReactTable .rt-tbody .rt-td {  border: 1px solid #989898 !important;  border-left: none!important;  border-bottom: none!important; }
+.ReactTable .rt-tfoot .rt-td { border-right: 1px solid #989898!important; }
+body .ReactTable .rt-tfoot .rt-td {
+  border: 1px solid #989898!important;
+  border-left: none !important;
+  background: #e6e6e6;
+  box-shadow: none;
+}
+
+body .card.border.border-primary {
+  border-color: #969696 !important;
+}
+
+.loginOuter {
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  margin-top: 7%;
+  background: #fff;
+  padding: 36px !important;
+  border-radius: 10px 10px 10px 10px;
+  margin: 15% auto;
+}
+.loginOuter h2 {
+  text-transform: uppercase !important;
+}
+.loginOuter input {
+  min-height: 42px;
+}
+.loginBtn {
+background-color: #56baed !important;  text-transform: uppercase !important;}
+.ag-center-cols-container {
+  width: 100% !important;
+}
+body .modal {
+  top: 3em !important;
+  left: initial !important;
+  height: auto;
+  right: inherit !important;
+}
+::placeholder {
+  font-size: 17px;
+}
+
+input[type="text"]
+{
+    font-size:17px;
+}
+
+.loading-indicator:before {
+  content: '';
+  background: #000000cc;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.loading-indicator:after {
+  content: 'Searching......';
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  color:white;
+  text-align:center;
+  font-weight:bold;
+  font-size:1.5rem;        
+}
+
+.ui.positive.button, .ui.positive.buttons .button {
+  background-color: #098d16ba;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+
+.ui.blue.button:active, .ui.blue.buttons .button:active {
+  background-color: #494e52;
+  color: #fff;
+  text-shadow: none;
+}
+
+a {
+  color: #181b1fa8;
+  text-decoration: none;
+  background-color: transparent;
+}

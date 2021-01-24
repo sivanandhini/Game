@@ -1,0 +1,19 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@theme-color         : #09548d;
+@pageBackground      : #FFFFFF;
+@panelBackground     : #EAEAEA;
+
+@primaryButton       : @theme-color;
+@grey                : @theme-color;
+@green               : @theme-color;
+@blue                : @theme-color;
+
+/*
+bloody-red     - #A4202F
+reflex-blue    - #09548d
+burnt-orange   - #CC5500
+
+*/

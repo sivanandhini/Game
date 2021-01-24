@@ -1,0 +1,351 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+
+/*-------------------
+      Base Sizes
+--------------------*/
+ 
+
+/* The size of page text  */
+
+@fontSize: 12.5px !important; 
+@inputPlaceholderColor : #262523;
+
+
+
+
+/* LISTS ############################################################## */
+
+/* Unordered */
+ul.unordered {
+    list-style-type: square;
+    margin-left: -15px;
+    font-size: @fontSize;
+}
+/* Ordered */
+ol.ordered {
+    list-style-type: upper-roman;
+    margin-left: -15px;
+    font-size: @fontSize;
+}
+
+
+/* END LISTS ############################################################## */
+
+
+
+/* ############################# Custom Style ################################## */
+
+.Select-placeholder {
+	font-size: @fontSize;
+}
+.Select--single {
+	>.Select-control {
+		.Select-value {
+			font-size: @fontSize;
+		}
+	}
+}
+.Select-menu-outer {
+	font-size: @fontSize;
+}
+.ReactTable {
+	.rt-th {
+		font-size: @fontSize;
+	}
+	.rt-td {
+		font-size: @fontSize;
+	}
+}
+.field.minWidth150 {
+	min-width: 150px;
+}
+.field.minWidth100 {
+	min-width: 100px;
+}
+.table-responsive {
+	overflow: auto;
+	width: 100%;
+}
+.fix-width {
+	width: 1495px !important;
+}
+.bredcrumpzIndex {
+	.seven.wide.column {
+		z-index: 99;
+	}
+}
+#content {	
+	select {
+		font-size: @fontSize;
+	}
+	textarea {
+		font-size: @fontSize;
+	}
+
+	.ui.search {
+		font-size: @fontSize;
+	}
+	.table-responsive {
+		overflow: auto;
+		min-height: 120px;
+	}
+	.icon-export {
+		margin: 6px 5px 5px -10px !important;
+	}
+	.remvespace-btm {
+		padding-bottom: 0px !important;
+	}
+	.inlineFlex {
+		display: inline-flex;
+	}
+}
+
+
+
+
+.item {
+  font-size: @fontSize ;
+}
+.row-select {
+    margin: 15px 0 0 20px !important;
+    font-size: @fontSize;  
+}
+.footer-content  {  font-size:  ; }
+
+.inline-label-compose {
+  font-size:@fontSize;  
+}
+.inline-font {
+  font-size:  @fontSize; 
+}
+label.read {
+   
+  font-size:  @fontSize;
+   
+}
+.temp {
+  font-size:  @fontSize;
+}
+
+/* As Needed: Text 12.5. - Used when the semantic ui "small" class is not applicable. Looks like a duplicate of .temp - Oops!*/
+
+.small-font{
+  font-size:  @fontSize;
+}
+/* As Needed: Label font for checkbox fields */
+label.twelve-point5{
+  font-size: @fontSize;  
+}
+dt.title {  font-size: @fontSize;   } 
+
+dd.content.active {  font-size: @fontSize;    }
+
+
+/* START FOOTER ############################################################## */
+/* Background color for footer.. */
+.footer-g-bkgd {
+  background-color: @grey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  margin: 0px !important;
+  z-index: 99;
+
+}
+.footer-content {
+  color: @white;
+  text-align: center;
+  
+}
+/* END FOOTER ############################################################## */
+
+
+
+/* ############################# REACT TABLE CUSTOMIZATIOB ################################## */
+
+.ReactTable { overflow: auto; }
+
+.ReactTable .rt-thead.-header { 
+  box-shadow: none !important;   
+}
+
+.ReactTable .rt-tbody { 
+  background: #fff !important;
+  overflow: initial !important; 
+}
+
+.ReactTable .rt-tbody .rt-td { 
+  padding: .78571429em .78571429em;  
+  border: 1px solid rgba(34,36,38,.1) !important;
+  border-top:none !important;
+  border-left: none !important;
+  word-break: break-all !important;
+  white-space: normal; 
+}
+
+.ReactTable .rt-thead .rt-th {
+  border-bottom: 1px solid rgba(34,36,38,.1); 
+  font-weight: 700;     
+  background: #f9fafb !important;  
+}
+
+.ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td { 
+  padding: .92857143em .78571429em !important;     
+  border-left: 1px solid rgba(34,36,38,.1) !important; 
+  font-size: @fontSize;    
+}
+
+.ReactTable .rt-tbody .rt-tr-group {
+  border-bottom: none !important;  
+}
+
+.ReactTable.-striped .rt-tr.-even {    
+  background-color: rgba(0,0,50,.02) !important;
+}
+
+.ReactTable.-striped .rt-tr.-odd {     
+  background: #fff !important;  
+}
+
+.ReactTable .rt-thead.-filters .rt-th {
+    border-right: 1px solid rgba(0,0,0,0.02);
+    background: #f2f1f1 !important;
+} 
+
+.ReactTable .rt-th, .ReactTable .rt-td { 
+  overflow: initial !important; 
+}
+
+#content .ReactTable .-pagination .-center {  flex: inherit }
+#content .ReactTable .-pagination .-btn {         
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  border-radius: 0px;
+  background: #fff;
+  color: #767676;
+  border: 1px solid #d2d2d2;
+  padding: 5px !important;
+  height: 32px;
+  width:60px;
+  font-size: @fontSize;
+  margin-top: 2px;  
+}
+
+.content .ReactTable .-pagination .-center { flex: inherit }
+.content .ReactTable .-pagination .-btn {         
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  border-radius: 0px;
+  background: #fff;
+  color: #767676;
+  border: 1px solid #d2d2d2;
+  padding: 5px !important;
+  height: 32px;
+  width:60px;
+  font-size: @fontSize;
+  margin-top: 2px;  
+}
+
+.ReactTable .-pagination .-previous, .ReactTable .-pagination .-next { 
+  flex: 0 5% !important; 
+}
+
+.ReactTable .rt-resizer { 
+  right:0px !important; 
+}
+
+.ReactTable .rt-thead .rt-th.-sort-asc,.ReactTable .rt-thead .rt-td.-sort-asc{
+    box-shadow:inset 0 3px 0 0 @grey
+}
+.ReactTable .rt-thead .rt-th.-sort-desc,.ReactTable .rt-thead .rt-td.-sort-desc{
+    box-shadow:inset 0 -3px 0 0 @grey
+}
+
+#content .ReactTable .-pagination .-btn:not([disabled]):hover {
+  background: rgba(0,0,0,0.02);
+  color: inherit;
+}
+
+.content .ReactTable .-pagination .-btn:not([disabled]):hover {
+  background: rgba(0,0,0,0.02);
+  color: inherit;
+}
+
+.ReactTable .-pagination{
+  border-top:0px !important;
+}
+
+#content .ReactTable .rt-thead.-filters {
+  border-bottom: 0px solid rgba(0,0,0,0.05);
+}
+
+.content .ReactTable .rt-thead.-filters {
+  border-bottom: 0px solid rgba(0,0,0,0.05);
+}
+
+.Select-clear {
+    display: none;
+}
+
+div#helplink {
+  position: relative;
+  top: 7px;
+}
+input[type="date"] {
+    min-width: 62px;
+}  
+
+.ui.selection.dropdown {
+    min-width: 80px;
+}  
+
+
+@media only screen and (min-width: 1200px) {
+
+
+ #content.ui.container {
+    width: 1600px !important;
+    padding-left: 50px;
+    padding-right: 50px;  
+ 
+  }
+
+}
+
+a.item.logo {
+    text-transform: uppercase !important;
+    font-weight: bold !important; 
+    font-size: 19.5px !important;
+} 
+ 
+.ui.form .disabled.field, .ui.form .disabled.fields .field, .ui.form .field :disabled {
+    pointer-events: none; 
+    opacity: .75 !important;
+} 
+/*#content .ReactTable .rt-thead .rt-resizable-header-content {
+    overflow: initial;
+  } */
+
+#content .ReactTable .rt-thead .rt-resizable-header-content { overflow: initial;  text-align: left; } 
+#content .ReactTable .rt-thead .rt-resizable-header-content span { display: block; }
+#content .ReactTable .rt-table {  overflow: initial;} 
+.ui.form .field>label { font-size:@fontSize; }
+.Select-placeholder, .Select--single > .Select-control .Select-value {  font-size: @fontSize; }
+.Select-menu-outer { font-size: @fontSize;}
+.ReactTable .rt-th, .ReactTable .rt-td {  font-size: @fontSize; }
+.field.minWidth150 {   min-width: 150px; }  
+.field.minWidth100 {  min-width: 100px; }  
+.table-responsive  { overflow: auto; width: 100%;} 
+.fix-width { width: 1495px !important; } 
+.bredcrumpzIndex .seven.wide.column {  z-index: 99; }
+#content input, #content select, #content textarea { font-size: @fontSize;} 
+#content .ui.table { font-size: @fontSize; }
+#content .ui.search { font-size: @fontSize; }
+
+#content .table-responsive { overflow: auto; min-height: 120px; } 
+#content .icon-export {   margin: 6px 5px 5px -10px !important; }
+#content .remvespace-btm {  padding-bottom: 0px !important; }
+
+#content .inlineFlex  { display: inline-flex; }   

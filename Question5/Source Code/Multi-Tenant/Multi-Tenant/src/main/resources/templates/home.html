@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+
+<!--Fontawesome CDN-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" th:href="@{/app.css}" />
+<script type="text/javascript" th:src="@{/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/jquery-ui.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/home.js}"></script>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+	            var _saveWebPunchURL = /*[[@{/api/punch}]]*/;
+	   /*]]>*/
+</script>
+</head>
+<body
+	th:style="'background:url(' + @{/image/database.jpg} + ') 50% -4% no-repeat; background-size:cover'">
+
+	<div class="container">
+		<div style="margin-top: 58px; margin-left: 1100px;">
+			<form method="post" th:action="@{/logout}">
+				<a id="logout" style="cursor: pointer; background: linear-gradient(120deg,#2d1e14,#080630 44%)"
+					onclick="this.parentNode.submit()"
+					class="btn pull-left logout btn-info">Logout</a>
+			</form>
+		</div>
+		<h3 style="font-family: cursive;color: cornsilk;margin-left: 382px">KGiSL Attendance Portal</h3>
+		<div style="margin-top: 88px;">
+			<form name="care-quote-box" action="javascript:void(0);">
+
+				<div class="right_cardcontainer" style="background: border-box;">
+					<div class="shadow_box card_size_position">
+						<p></p>
+						<p>Save My Punch!</p>
+						<p></p>
+					</div>
+
+					<div class="get_quote_button_cont">
+						<button class="get_quote_button card_size_position"
+							id="get_quote_button" type="button" onclick="saveWebPunch();">
+							Punch<span class=""></span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal fade" id="alertmsg" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true"
+				data-keyboard="false" data-backdrop="static">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+						      <h2>Your punch has been saved successfully. Thank you!!</h2>
+						</div>
+						<div class="modal-footer padding-5">
+							<button type="button" class="btn btn-sm btn-success"
+								data-dismiss="modal">
+								<i class="fa fa-times-circle bigger-110">Close</i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+</body>
+</html>

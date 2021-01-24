@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>MAGAZINE</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-ui.js}"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/magazine.js}"></script>
+<style type="text/css">
+* {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.navbar-n {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.navbar-n a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown-n {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown-n .dropbtn-n {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar-n a:hover, .dropdown-n:hover .dropbtn-n {
+	background-color: #977f7f;
+}
+
+.dropdown-n-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-n-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-n-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-n:hover .dropdown-n-content {
+	display: block;
+}
+
+header {
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+}
+
+#darkBack {
+	width: 100%;
+	height: 100vh;
+	background: rgba(76, 56, 75, .15);
+}
+
+#popUp {
+	position: fixed;
+	max-width: 424px;
+	width: 27%;
+	height: 200px;
+	background: rgba(236, 240, 241, 1);
+	border: 7px solid #fff;
+	bottom: 340px;
+	float: center;
+	margin-left: 464px;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+	float: center;
+	margin-left: 470px;
+}
+
+#new span {
+	background: #fff;
+	position: absolute;
+	color: #1c8dc4;
+	padding: 4px 10px;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-top: -5px;
+}
+
+#popUp .close {
+	color: #464646;
+	right: 8px;
+	top: 0px;
+	position: absolute;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#popUp h2 {
+	font-size: 17px;
+	color: #464646;
+	line-height: 24px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 40px;
+	padding: 0 20px;
+}
+
+#body {
+	height: 1200px;
+	background: #eee;
+}
+
+a.button {
+	margin: 0 auto;
+	text-align: center;
+	right: 0;
+	left: 0;
+	position: absolute;
+	width: 120px;
+	font-size: 15px;
+	color: #fff;
+	border-bottom: 2px solid #18729f;
+	background: #1c8dc4;
+	border-radius: 4px;
+	padding: 8px 0;
+}
+
+#plus {
+	position: fixed;
+	color: #fff;
+	bottom: 15%;
+	font-size: 15px;
+	margin-left: -425px;
+	-webkit-transition: all 1.25s ease;
+	-moz-transition: all 1.25s ease;
+	-o-transition: all 1.25s ease;
+	transition: all 1.25s ease;
+	cursor: pointer;
+	text-align: left;
+	letter-spacing: 1px;
+}
+
+#plus span {
+	position: absolute;
+	margin-top: 38px;
+	left: 4px;
+}
+
+#plus::after {
+	content: '';
+	display: block;
+	display: relative;
+	border-top: 55px solid transparent;
+	border-bottom: 55px solid transparent;
+	border-left: 55px solid #1c8dc4;
+}
+
+input.button {
+	margin: 0 auto;
+	text-align: center;
+	right: 0;
+	left: 0;
+	position: absolute;
+	width: 120px;
+	font-size: 15px;
+	color: #fff;
+	border-bottom: 2px solid #18729f;
+	background: #1c8dc4;
+	border-radius: 4px;
+	padding: 8px 0;
+}
+
+#popUp form {
+	font-size: 17px;
+	color: #464646;
+	line-height: 18px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 26px;
+	padding: 0 20px;
+}
+
+@media all and (max-width: 900px) {
+	#popUp {
+		margin-left: -425px;
+	}
+	#plus {
+		margin-left: 0px;
+	}
+}
+
+body {
+	background-color: beige;
+}
+.dropdown-active{
+   background-color: #977f7f;
+}
+::placeholder {
+  font-size: 18px;
+}
+</style>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+	var _getNewsSourceUrl = 'http://newsapi.org/v1/sources?language={language}';
+	var _searchNewsSourceUrl = 'https://newsapi.org/v2/everything?q={searchText}&apiKey=5b7e41d10e294193b9abffa0e034e3e2';
+	var _getHeadlineNewsUrl = 'http://newsapi.org/v2/top-headlines?country={country}&apiKey=5b7e41d10e294193b9abffa0e034e3e2';
+	var _getTopicsUrl = 'https://newsapi.org/v1/articles?source={topic}&apiKey=5b7e41d10e294193b9abffa0e034e3e2';
+	/*]]>*/
+</script>
+</head>
+<body>
+	<div align="center">
+		<p th:text="${errorMessage}"></p>
+		<p th:text="${mailMessage}" style="color: blue; font-weight: bold;"></p>
+	</div>
+	<div class="navbar-n"
+		style="margin-top: -10px; margin-bottom: 1px; background-color: #715575;">
+		<a class="dropdown-active" id="headlines" style="cursor: pointer;" onclick="showHeadlines()">HeadLines</a>
+		<div class="dropdown-n">
+			<button class="dropbtn-n">
+				Country <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-n-content contry">
+				<a onclick="changeCountry('in');"><b>INDIA</b></a> <a
+					onclick="changeCountry('us');"><b>US</b></a> <a
+					onclick="changeCountry('ru');"><b>RUSSIA</b></a> <a
+					onclick="changeCountry('cn');"><b>CHINA</b></a> <a
+					onclick="changeCountry('br');"><b>BRAZIL</b></a> <a
+					onclick="changeCountry('za');"><b>SOUTH AFRICA</b></a> <a
+					onclick="changeCountry('ca');"><b>CANADA</b></a>
+			</div>
+		</div>
+		<div class="dropdown-n topc">
+			<button class="dropbtn-n">
+				Topics <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-n-content ">
+				<a onclick="changeTopics('entertainment-weekly');"><b>ENTERTAINMENT</b></a> <a
+					onclick="changeTopics('bbc-sport');"><b>SPORTS</b></a> <a
+					onclick="changeTopics('business-insider');"><b>BUSINESS</b></a> <a
+					onclick="changeTopics('financial-times');"><b>FINANCIAL</b></a> <a
+					onclick="changeTopics('new-scientist');"><b>TECHNOLOGY</b></a> <a
+					onclick="changeTopics('national-geographic');"><b>ANIMALS</b></a> 
+			</div>
+		</div>
+		<div class="dropdown-n chnl">
+			<button class="dropbtn-n">
+				Channels <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-n-content ">
+				<a onclick="changeNewsChannel('bbc-news');"><b>BBC News</b></a> <a
+					onclick="changeNewsChannel('cnn');"><b>CNN</b></a> <a
+					onclick="changeNewsChannel('google-news');"><b>Google News</b></a> <a
+					onclick="changeNewsChannel('independent');"><b>Independent</b></a> <a
+					onclick="changeNewsChannel('the-hindu');"><b>The Hindu</b></a> <a
+					onclick="changeNewsChannel('the-times-of-india');"><b>The Times of India</b></a><a
+					onclick="changeNewsChannel('usa-today');"><b>USA Today</b></a> 
+			</div>
+		</div>
+		<a class="seelctedA" style="cursor: pointer;" id="searchNews" onclick="searchNews(this)">Search
+			News</a>
+	</div>
+
+	<div id="myCarousel" class="carousel slide headlines-div"
+		data-ride="carousel" style="display: block;">
+
+		<!-- Wrapper for slides -->
+		<div id="headline-carousel-inner" class="carousel-inner"></div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#myCarousel"
+			data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<div id="search-news-div" style="display:none">
+		<div class=""
+			style="width: 50%; margin-left: 294px; margin-top: 19px;">
+			<input type="text" id="searchBox" class="form-control" placeholder="Search.."
+				style="height: 44px;" /> 
+		</div>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"
+			style="display: block;">
+
+			<!-- Wrapper for slides -->
+			<div id="search-carousel-inner" class="carousel-inner"></div>
+            <!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+	<div id="topics-news-div" style="display:none">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"
+			style="display: block;">
+
+			<!-- Wrapper for slides -->
+			<div id="topics-carousel-inner" class="carousel-inner"></div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+	<div id="channel-news-div" style="display:none">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"
+			style="display: block;">
+
+			<!-- Wrapper for slides -->
+			<div id="channel-carousel-inner" class="carousel-inner"></div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.small.button, .ui.small.buttons .button, .ui.small.buttons .or { font-size: @fontSize; }

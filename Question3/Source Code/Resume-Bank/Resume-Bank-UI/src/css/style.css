@@ -1,0 +1,584 @@
+
+/* START ---------------- TEST SECTION */
+
+/* END ---------------- TEST SECTION */
+
+
+
+/* MAIN PAGE CONTENT ################################################ */
+/* Pushes content below fixed header. */
+.ui#content{
+  margin-top: 65px;
+}
+/* END MAIN PAGE CONTENT ################################################ */
+
+
+
+
+/* LOGO ############################################################## */
+/* logo area */
+.logo {
+  height: 48px !important;
+  background-color: #cfcfcf !important;
+  margin-left: -1px;
+  max-width: 250px;
+}
+/* Actual logo - dimensions 200x38 frame jpg or png */
+ .logo a {
+  width: 200px!important;
+  height: 38px !important;
+  background-image: url(data:image/jpeg;base64,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);
+}
+/* END LOGO ############################################################## */
+
+body, html  {
+  height: auto !important;
+}
+
+.body > .container {
+  margin-top: 80px;
+}
+
+/* START GRID ################################################ */
+/* Background color & border for main content grid. */
+.g-bkgd {
+   background-color: #f2f1f1;
+   border: 1px solid #e2e2e2;
+   padding: 25px;
+   margin-top: 25px;
+   margin-bottom: 100px !important;
+}
+/* Grid section padding where needed. */
+.bottom-margin {
+  margin-bottom: 3.125em !important;
+}
+.top-margin {
+  margin-top: 3.125em !important;
+}
+/* END GRID ################################################ */
+
+
+
+/* START BREADCRUMB, CLIENT, HELP SECTION (BCH) #################################### */
+/* Grid padding for BCH section */
+.padding-bch {
+    padding: 0 0 8px 0 !important;
+}
+/* Icon top-margin push down for BCH section */
+.margin-icon-bch {
+    margin: 20px 0 0 0 !important;
+}
+/*Minimum width for Parent / Corporate field for BCH section */
+.dd-bch {
+    min-width: 300px;
+}
+/* END BREADCRUMB, CLIENT, HELP SECTION #################################### */
+
+
+
+/* SEGMENTS ############################################################## */
+/* Bottom Padding for segment headers with a right-floated button option */
+.segment-padding {
+    padding-bottom: 40px !important;
+}
+.segment-top {
+    margin-bottom: -15px !important;
+}
+/* END SEGMENTS ############################################################## */
+
+
+/* START DASHBOARD CHART ############################################################## */
+/* Chart for Dashboard */
+.chart-body {
+  background: #ffffff;
+  padding: 16px;
+  margin-top: 50px !important;
+}
+.chart-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+/* END DASHBOARD CHART ############################################################## */
+
+
+
+/* MARGINS ############################################################## */
+/* As Needed: Pushes down from top 25px and over from bottom 10px */
+.margin {
+  margin: 25px 0 10px 0;
+}
+/* As Needed: Pushes down from top by 25px */
+.push-down {
+  margin-top: 22px!important;
+}
+/* As Needed: Pushes down from top by 25px */
+.push-down15 {
+  margin-top: 15px!important;
+}
+/* As Needed: Pushes down from top by 35px */
+.push-down35 {
+  margin-top: 35px!important;
+}
+/* As Needed: Pushes down from top by 5px */
+.margin-top-5 {
+  margin-top: 5px!important;
+}
+/* As Needed: Pushes UP towards top by 5px */
+.margin-top {
+  margin-top: -5px;
+}
+/* As Needed: Pushes away from bottom by 5px */
+.margin-bottom-5 {
+  margin-bottom: 5px !important;
+}
+/* As Needed: Pushes away from bottom by 15px */
+.margin-bottom-15 {
+  margin-bottom: 15px !important;
+}
+/* As Needed: Pushes UP towards top by 20px */
+.push-up {
+  margin-top: -20px!important;
+}
+/* As Needed: Pushes UP towards top by 15px */
+.push-up15 {
+  margin-top: -15px!important;
+}
+/* As Needed: Pushes UP towards top by 20px */
+.push-up40 {
+  margin-top: -40px!important;
+}
+/* As Needed: Pushes checkbox down and over to right */
+.cb-down {
+  margin-top: 25px!important;
+  margin-left: 10px!important;
+}
+/* As Needed: */
+.top-bottom {
+  margin-top: 25px!important;
+  margin-bottom: 25px!important;
+}
+/* As Needed: Pushes away from left by 15px */
+.push-right-15 {
+  margin-left: 15px!important;
+}
+/* As Needed: Pushes away from left by 30px */
+.push-right-30 {
+  margin-left: 30px!important;
+}
+/* END MARGINS ############################################################## */
+
+
+
+/* PADDINGS ############################################################## */
+/* As Needed: All-around padding of 25px */
+.padding25 {
+  padding: 25px;
+}
+/* As Needed: All-around padding of 20px */
+.padding20 {
+  padding: 20px;
+}
+/* As Needed: Padding on bottom only of 10px */
+.pad-bottom-10 {
+  padding-bottom: 10px;
+}
+/* END PADDINGS ############################################################## */
+
+
+
+/* TEXT ############################################################## */
+
+/* END TEXT ############################################################## */
+
+
+
+/*START MODALS ############################################################## */
+/* Largest Modal */
+.popup-large {
+  margin: 25px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 90%;
+  position: relative;
+  /* transition: all 10s ease-in-out; */
+  max-height: 500px;
+  overflow: auto !important;
+}
+/* Regular Sized Modal */
+.popup {
+  margin: 25px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 70%;
+  position: relative;
+  /* transition: all 10s ease-in-out; */
+  max-height: 500px;
+  overflow: auto !important;
+}
+/* Smallest Modal */
+.popup-small {
+  margin: 25px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 0 ease-in-out;
+  max-height: 500px;
+  overflow: auto !important;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #000;
+}
+h1 {
+  text-align: left;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #000000;
+  margin: 25px 0;
+  font-weight: 900;
+  font-size: 18px;
+}
+.ui.circular.button {
+  border-radius: 10em;
+  margin-top: -25px !important;
+}
+.ui.circular.button > .icon {
+  width: 1em;
+  vertical-align: baseline;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup .content {
+  margin-bottom: 25px !important;
+  padding: 25px;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 90%;
+  }
+  .popup{
+    width: 90%;
+  }
+}
+.closebutton {
+  position: fixed;
+  height: 51px;
+  width: 50px;
+  top: -1px;
+  right: 10px;
+  z-index: 1000;
+  background-color:black;
+  border-color: white;
+  border-width: 1px;
+}
+/*END MODALS ############################################################## */
+
+
+
+/* START MISC ############################################################## */
+/* Left and right floats. Reason for this css addition: Only certain elements, like button & segments, float appropriately without this added class. In those cases, all you have to do is type in "right floated" or "left floated" not make up a class to do the same thing. */
+div [class*="left floated"] {
+  float: left;
+  margin-left: 0.25em;
+}
+div [class*="right floated"] {
+  float: right;
+   margin-right: 0.25em;
+}
+/* Remove radius from any border. */
+.no-radius {
+  border-radius: 0 !important;
+}
+/* END MISC ############################################################## */
+
+/* START INBOX ############################################################## */
+/* Label for inline label font for Compose section.*/
+.inline-label-compose {
+   
+  font-weight: 700 !important;
+}
+/* Padding for Compose message section. */
+.compose-padding {
+  padding: 0 20px 20px 20px !important;
+}
+/* For inline paragraph font. */
+.inline-font {
+ 
+  font-weight: 400 !important;
+}
+/* **BLUE** inline label font. */
+label.blue{
+  margin-left: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* **BLACK** inline label font. */
+label.read {
+  margin-left: 15px;
+ 
+  font-weight: 400;
+}
+
+/* START INBOX ############################################################## */
+
+
+
+/* START REMOVE WHEN DONE ############################################################## */
+/* As Needed: Font to be replaced by developer after system-wide 12.5 is compiled. */
+
+
+/* Temporary until I can find a Semantic UI Replacement */
+.textcenter {
+  text-align: center !important;
+}
+.textright {
+  text-align: right !important;
+}
+/* Can't Recall */
+.push-header {
+  margin-top: 30px !important;
+  font-size: 14px !important;
+}
+/* BELOW .ui.form input [type="date"] add to variables & compile */
+.ui.form input[type="date"] {
+  color: #e2e2e2 !important;
+}
+.ui.form input[type="date"]:focus {
+  color: #000000 !important;
+}
+
+
+
+
+/* Add to variables & compile. The select fields were showing a larger font without this code. */
+
+/* Input field text color*/
+.disabled input, select, textarea {
+color: #a9a9a9 !important;
+}
+/* DEV Notes Button - Remove when all issues are resolved. */
+.mybutton {
+  position: fixed;
+  bottom: -4px;
+  left: 10px;
+  z-index: 1000;
+}
+/* END REMOVE WHEN DONE ############################################################## */
+
+
+
+/* START PLACEHOLDER...Show Table Rows, Search & Export Icon. */
+/* Pushes show rows text down. */
+
+/* Pushes table search box down. */
+.search-ph {
+    margin: 5px 5px 0 0 !important;
+}
+/* Show Rows Section - Export Icon */
+.icon-export {
+    margin: 6px 0 0 -10px !important;
+}
+/* END PLACEHOLDER...Show Table Rows, Search & Export Icon. */
+
+
+
+/*START Multiple Dropdown Selection (Contain Search input field) */
+/*Contains search box width in specific multiple select fields so that the search box does not push bast the right border. Example user: Reports / Inquiry: Select CLient ID(s), Select Status Code Group(s), Select Status Code(s). */
+.contain-search {
+    width: 200px !important;
+}
+/*END Multiple Dropdown Selection (Contain Search input field) */
+
+
+
+/* START Accordion - SOURCE: https://codepen.io/halidaa/pen/eKJwWK */
+dl.accordion.ui {
+  margin:30px auto 60px;
+  max-width:100%;
+}
+dt.title {
+  background:#d1d1d1;
+  border-left:8px solid #000000;
+  border-bottom:2px solid #e8e0e0;
+  color:#000000 !important;
+  font-family:lato !important;
+  font-weight:600;
+  padding:15px !important;
+  position:relative;
+  text-align:left;
+  text-transform:uppercase;
+  transition: all .5s;
+}
+dt.title:after,dt.title:before {
+  content:"\f078";
+  font-family:FontAwesome;
+  position:absolute;
+  right:15px;
+  height:28px;
+  top:0;
+  bottom:0;
+  margin:auto;
+  transition:all .7s ease-in-out;
+}
+dt.title:before {
+  opacity:0;
+  transition:all .4s ease-in-out;
+}
+dt.title:hover {
+  cursor:pointer;
+}
+dt.title + dd.content {
+  max-height:0;
+}
+dd.content.active {
+  background:#cfcfcf;
+  color:#000000;
+  font-family:lato;
+  font-size: 12.5px;
+  margin:0;
+  overflow: scroll !important;
+  padding:1px 15px !important;
+  transition: all .5s;
+}
+dt.title.active {
+  background:#000000;
+  border-color:#000000;
+  color:#ffffff !important;
+  margin:-5px;
+}
+dt.active:after {
+  transform:rotate(180deg) translateY(-2px);
+}
+dt.title.active:before {
+  opacity:1;
+  transform:rotate(-360deg) translateY(-3px);
+}
+dt.title.active + dd.content {
+  padding:15px 15px 30px !important;
+  margin:0 -5px;
+  max-height:200px;
+}
+/* END Accordion */
+
+
+
+/* ADD BACK IN IF PROBLEMS; OTHERWISE REMOVE */
+
+/* Show Rows Section - Grid Margin
+.grid-/* Show Rows Section - Export Icon */
+/* bottom {
+    margin: -10px 0 -18px 0 !important;
+}
+*/
+/* ############################################################### */
+/*
+.dd-width {
+    width: 250px !important;
+}
+*/
+/* ############################################################### */
+/*
+.button-grid {
+   background-color: #f2f1f1;
+   border: 1px solid #e2e2e2;
+}
+*/
+/* ############################################################### */
+/* Add User */
+/*
+.add {
+  padding-top: 0.938em;
+  padding-bottom: 0.938em;
+}
+*/
+/* ############################################################### */
+
+/* Error message color */
+.validation-message{
+  color:red;
+}
+/* ############################################################### */
+
+ 
+
+@media only screen and (min-width: 1200px) {
+
+
+ #content.ui.container {
+    width: 1600px !important;
+    padding-left: 50px;
+    padding-right: 50px;  
+ 
+  }
+
+}
+
+a.item.logo {
+    text-transform: uppercase !important;
+    font-weight: bold !important; 
+    font-size: 19.5px !important;
+} 
+ 
+.ui.form .disabled.field, .ui.form .disabled.fields .field, .ui.form .field :disabled {
+    pointer-events: none; 
+    opacity: .75 !important;
+} 
+/*#content .ReactTable .rt-thead .rt-resizable-header-content {
+    overflow: initial;
+  } */
+
+
+  .login-version .version-txt {
+
+    position: absolute;
+    font-size: 12px;
+    bottom: -20px;
+    width: 100%;
+    text-align: right;
+    right: 0px;
+    color: #aeaeae;
+
+}
+.login-version.ui.header {
+ margin-bottom: 25px !important;
+}
+.login-version .content { position: relative;}
+
+.footer-content .version-txt  { float:right }
+
+.link {
+    margin-top: 5px;
+    color: #1e70bf;
+    text-decoration: underline;
+    cursor: pointer;    
+}
+.small-text{
+  font-size: .92857143em
+}

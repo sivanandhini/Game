@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!--Bootsrap 4 CDN-->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<!--Fontawesome CDN-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/multiple-select.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/daterangepicker.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/app.css}" />
+<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-ui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.multiple.select.js}"></script>
+<script type="text/javascript" th:src="@{/js/moment.js}"></script>
+<script type="text/javascript" th:src="@{/js/daterangepicker.js}"></script>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSl_nuDqAJVi9e6DRKkBoFTh9C5rw3QmI"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"
+	integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ=="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.15.1/ckeditor.js"
+	integrity="sha512-aThGT4RJc95+zt2vrs8iMjrFpsJxcFclp7tweVls6/3cNo3GWvGvtLV576o8Kdvdf3fJhrrG3wkmoea/KJMLFQ=="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.15.1/adapters/jquery.min.js"
+	integrity="sha512-68YYxSqLZKmETqtWgUchCnPNjxsqIwpjSyb71jgo5BFlB9px5G+LD+MK2VxZEZIBXwoLqPaSD3FHJvRPWemM7w=="
+	crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/home.js}"></script>
+<title>Responsive Form</title>
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+       var markerIcon=/*[[@{/image/google-map-marker.png}]]*/;
+       var _saveProfileInfoURL = /*[[@{/api/profile}]]*/;
+       var _sendFeedbackURL = /*[[@{/api/feedback}]]*/;
+
+	/*]]>*/
+</script>
+</head>
+<body>
+	<div class="navbar-n"
+		style="margin-top: -10px; margin-bottom: 1px; background-color: #777769">
+		 <a class="dropdown-active" id="aboutC" style="cursor: pointer;color: white;"
+			onclick="aboutKg(this)">About</a>
+		<a style="cursor: pointer;color: white;" id="headlines"
+			onclick="showMyProfile()">My Profile</a>
+		<div class="dropdown-n topc">
+			<button class="dropbtn-n">
+				Contact Us <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-n-content ">
+				<a onclick="showMap(this);"><b>Address</b></a>
+			</div>
+		</div>
+		<a id="feedback" style="cursor: pointer;color: white;" onclick="sendUsFeedback()">Send
+			Us Feedback</a>
+	</div>
+
+	<div class="container rounded bg-white mt-5 mb-5"
+		style="display: none" id="my-profile">
+		<div class="row">
+			<div class="col-md-3 border-right">
+				<div
+					class="d-flex flex-column align-items-center text-center p-3 py-5">
+					<img class="rounded-circle mt-5" id="profile-img"
+						src="https://afmnoco.com/wp-content/uploads/2019/07/74046195_s.jpg"
+						/> <input type="file"
+						class="btn btn-outline-primary" style="display: none"
+						id="uploadProfilePicFile" />
+					<button class="btn btn-outline-primary"
+						onClick="triggerFileClick()" id="uploadProfilePicFile">Upload</button>
+				</div>
+				<div>
+					<label class="labels" id="resumeLbl">Attach Your Resume here..</label> <input type="file" required="required"
+						class="btn btn-outline-primary form-control" id="resumeFile" />
+				</div>
+			</div>
+			<div class="col-md-5 border-right">
+				<div class="p-3 py-5">
+					<div
+						class="d-flex justify-content-between align-items-center mb-3 form-row">
+						<h4 class="text-right">Profile Settings</h4>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="inputEmail4">Name</label> <input type="text" required="required"
+								class="form-control" id="name" placeholder="Name" />
+						</div>
+						<div class="form-group col-md-6">
+							<label for="inputPassword4">Phone Number</label> <input
+								type="text" class="form-control" id="phoneNumber" required="required"
+								placeholder="Enter phone number" />
+						</div>
+					</div>
+					<div class="row mt-3 form-group">
+						<div class="col-md-12 form-group">
+							<label class="labels">Address</label><input type="text" id="address" required="required"
+								class="form-control" placeholder="Enter address" value="" />
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="labels">Gender</label> <select  required="required"
+								class="form-control mr-sm-2" id="gender">
+								<option selected="selected">Choose...</option>
+								<option value="MALE">Male</option>
+								<option value="FEMALE">Female</option>
+								<option value="OTHER">Other</option>
+							</select>
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="labels">DOB</label><input type="text" id="dob" required="required"
+								class="form-control" placeholder="MM/DD/YYYY" />
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-12 form-group">
+							<label class="labels">Education</label><input type="text" id="education" required="required"
+								class="form-control" placeholder="Education" />
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="labels">Email ID</label><input type="text" id="email" required="required"
+								class="form-control" placeholder="Enter email id" />
+						</div>
+						<div class="col-md-6 form-group">
+							<label class="labels">Languages</label><select required="required"
+								class="form-control mr-sm-2" id="language">
+								<option value="English">English</option>
+								<option value="Tamil">Tamil</option>
+								<option value="Hindi">Hindi</option>
+								<option value="French">French</option>
+							</select>
+						</div>
+						<div class="col-md-12 my-2 form-group">
+							<label class="labels my-1">Willing To Work From On-Site</label>
+							<form>
+								<label class="radio-inline"> <input type="radio"
+									name="workradio" />Yes
+								</label> <label class="radio-inline"> <input type="radio"
+									name="workradio" />No
+								</label>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="p-3 py-5">
+					<div id="exp-div">
+						<div class="col-md-12 form-group">
+							<label class="labels">Experience</label>
+							<div class="input-group">
+								<input type="text" name="quant[2]"
+									placeholder="Enter your experience"
+									class="form-control input-number" /> <span
+									class="input-group-btn" onclick="addExperience()">
+									<button type="button" class="btn btn-success btn-number"
+										data-type="plus" data-field="quant[2]">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 my-2 form-group">
+							<label class="labels my-1">Known Platforms</label>
+							<form>
+								<label class="radio-inline"> <input type="checkbox"
+									name="langChkBox" />  Java
+								</label> <label class="radio-inline"> <input type="checkbox"
+									name="langChkBox" />  .Net
+								</label><label class="radio-inline"> <input type="checkbox"
+									name="langChkBox" />  PHP
+								</label>
+							</form>
+						</div>
+						<br/>
+					<div class="col-md-12 my-2 form-group">
+						<label class="labels">Additional Details</label>
+						<textarea class="form-control" rows="5" id="addDetails"
+							placeholder="Enter your details.."></textarea>
+					</div>
+				</div>
+				<div class="col-md-5 text-right">
+					<button class="btn btn-success profile-button" type="button" onclick="saveProfileDetails()">Save
+						Profile</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container p-4 my-5 border text-white" style="display: none"
+		id="map-kg">
+		<div class="mapcontainer">
+
+			<div id="map_canvas" style="height: 326px;" class="col-md-12" />
+		</div>
+	</div>
+
+	<div class="container p-4 my-5 border text-white" style="display: none"
+		id="feedback-kg">
+		<form>
+			<textarea id="feadback-editor"></textarea>
+			<button class="btn btn-primary profile-button" onclick="feedbachSend();" type="button">Send
+				Feedback</button>
+		</form>
+	</div>
+
+	<div class="container p-4 my-5 border text-white" style="display: block"
+		id="about-kg">
+		<div id="myCarousel" class="carousel slide headlines-div"
+			data-ride="carousel" style="display: block;">
+
+			<!-- Wrapper for slides -->
+			<div id="headline-carousel-inner" class="carousel-inner">
+				<div class="item active" style="height: 500px">
+					<a href="https://www.kgisl.com/" target="_blank"><img
+						th:src="@{/image/kgisl.jpg}" style="width: 100%;" /></a>
+					<div class="carousel-caption">
+						<h3>KGiSL Campus</h3>
+						<p>KGISL is a global IT services, consulting and business
+							solutions organization that has been partnering with some of the
+							largest organisation in their transformation journeys for over 25
+							years.</p>
+					</div>
+				</div>
+				<div class="item" style="height: 500px">
+					<a href="https://www.kgisl.com/" target="_blank"><img
+						th:src="@{/image/kgisl1.jpg}" style="width: 100%;" /></a>
+					<div class="carousel-caption">
+						<h3>KGiSL Campus</h3>
+						<p>KGISL is a global IT services, consulting and business
+							solutions organization that has been partnering with some of the
+							largest organisation in their transformation journeys for over 25
+							years.</p>
+					</div>
+				</div>
+				<div class="item" style="height: 500px">
+					<a href="https://www.kgisl.com/" target="_blank"><img
+						th:src="@{/image/kgisl2.jpg}" style="width: 100%;" /></a>
+					<div class="carousel-caption">
+						<h3>KGiSL Campus</h3>
+						<p>KGISL is a global IT services, consulting and business
+							solutions organization that has been partnering with some of the
+							largest organisation in their transformation journeys for over 25
+							years.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "LicensePortal",
+  "description": "This file facilitates the webpack features to enable build integration of the separate ReactJS code.",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd ../licenseportal-ui && npm run build",
+    "build-fast": "cd ../licenseportal-ui && npm run build-fast",
+    "test": "cd ../licenseportal-ui && npm run test --env=jsdom"
+  }
+}
